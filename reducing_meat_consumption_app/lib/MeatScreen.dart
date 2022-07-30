@@ -3,6 +3,10 @@ import 'package:flutter/services.dart';
 import 'constants.dart';
 
 class LogMeatPage extends StatefulWidget {
+  LogMeatPage(String username, String password) {
+
+  }
+
   @override
   State<LogMeatPage> createState() => _LogMeatPage();
 }
