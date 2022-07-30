@@ -50,18 +50,20 @@ class _LogMeatPage extends State<LogMeatPage> {
                       ),
                     ),
                     TextButton(
-                        onPressed: () {
-                          setState(() {
-                            meatLeft -= int.parse(meatLogController.text);
-                            if (meatLeft <= 0) {
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      popupDialog(context));
-                            }
-                          });
-                        },
-                        child: const Text('Log!'))
+                      onPressed: () {
+                        setState(() {
+                          meatLeft -= int.parse(meatLogController.text);
+                          if (meatLeft <= 0) {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) =>
+                                    popupDialog(context));
+                          }
+                        });
+                      },
+                      child: const Text('Log!'),
+                      style: TextButton.styleFrom(backgroundColor: Colors.red),
+                    )
                   ],
                 ),
               )

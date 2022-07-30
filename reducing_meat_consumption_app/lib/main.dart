@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:reducing_meat_consumption_app/MeatScreen.dart';
+import 'package:reducing_meat_consumption_app/SignUpScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "Meat Tracker",
         home: Scaffold(
-          appBar: AppBar(title: const Text("Meat Tracker")),
-          body: MyHomePage(
+          appBar: AppBar(
+              title: const Text("Meat Tracker"), backgroundColor: Colors.red),
+          body: const MyHomePage(
             title: "Meat Tracker",
           ),
         ));
@@ -33,6 +36,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController userNameController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,9 +47,43 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Container(
             alignment: Alignment.center,
-            child: const Text('Login', style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)),
-          )
-          
+            child: const Text('Login',
+                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: 100,
+            width: 50,
+            child: TextField(
+              controller: userNameController,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Username'),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: 100,
+            width: 50,
+            child: TextField(
+              controller: passwordController,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Password'),
+            ),
+          ),
+          OutlinedButton(
+              onPressed: () {},
+              child: const Text('Sign in',
+                  style: TextStyle(fontSize: 30, color: Colors.black)),
+              style: TextButton.styleFrom(backgroundColor: Colors.red)),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()));
+              },
+              child: const Text(
+                "Don't have a account?",
+                style: TextStyle(fontSize: 20),
+              ))
         ],
       ),
     );
