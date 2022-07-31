@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:reducing_meat_consumption_app/MeatScreen.dart';
 
+import 'main.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -18,6 +20,7 @@ class SignUpPageState extends State<SignUpPage> {
     return Scaffold(
         appBar: AppBar(
             title: const Text("Meat Tracker"), backgroundColor: Colors.red),
+        backgroundColor: Colors.pink[50],
         body: Align(
           alignment: Alignment.center,
           child: Padding(
@@ -25,9 +28,15 @@ class SignUpPageState extends State<SignUpPage> {
               child: Center(
                 child: ListView(
                   children: [
-                    const Text('Create Account',
-                        style: TextStyle(
-                            fontSize: 100, fontWeight: FontWeight.bold)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Create Account',
+                            style: TextStyle(
+                                fontSize: 100, fontWeight: FontWeight.bold)),
+                        Image.asset('images/meat.png', height: 100, width: 100)
+                      ],
+                    ),
                     SizedBox(
                       height: 100,
                       width: 50,
@@ -46,6 +55,7 @@ class SignUpPageState extends State<SignUpPage> {
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Password'),
+                        obscureText: true,
                       ),
                     ),
                     OutlinedButton(
@@ -87,7 +97,8 @@ class SignUpPageState extends State<SignUpPage> {
       actions: <Widget>[
         new TextButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyApp()));
           },
           child: const Text('Close'),
         ),

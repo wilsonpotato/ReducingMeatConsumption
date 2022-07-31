@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -23,12 +24,13 @@ class _LogMeatPage extends State<LogMeatPage> {
 
   @override
   Widget build(BuildContext context) {
-    setMeats(); 
+    setMeats();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Log Your Meats!'),
         backgroundColor: Colors.red,
       ),
+      backgroundColor: Colors.pink[50],
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView(
@@ -38,8 +40,8 @@ class _LogMeatPage extends State<LogMeatPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(meatLeft.toString()),
-                    Image.asset('images/meat.png', height: 100, width: 100)
+                    Text(meatLeft.toString(), style: TextStyle(fontSize: 120),),
+                    Image.asset('images/meat.png', height: 120, width: 120)
                   ],
                 ),
               ),
@@ -50,7 +52,7 @@ class _LogMeatPage extends State<LogMeatPage> {
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      height: 30,
+                      height: 50,
                       width: 350,
                       child: TextField(
                         controller: meatLogController,
@@ -62,6 +64,9 @@ class _LogMeatPage extends State<LogMeatPage> {
                           FilteringTextInputFormatter.digitsOnly
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      width: 20,
                     ),
                     TextButton(
                       onPressed: () {
@@ -79,21 +84,24 @@ class _LogMeatPage extends State<LogMeatPage> {
                               .set({'meat': meatLeft.toString()});
                         });
                       },
-                      child: const Text('Log!'),
+                      child: const Text(
+                        'Log!',
+                        style: TextStyle(fontSize: 45),
+                      ),
                       style: TextButton.styleFrom(backgroundColor: Colors.red),
                     ),
                   ],
                 ),
               ),
               TextButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => const MyApp()));
-                },
-                child: const Text(
-                  "Sign out",
-                  style: TextStyle(fontSize: 20),
-                ))
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const MyApp()));
+                  },
+                  child: const Text(
+                    "Sign out",
+                    style: TextStyle(fontSize: 20),
+                  ))
             ],
           )),
     );

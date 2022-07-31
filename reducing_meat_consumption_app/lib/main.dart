@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
               title: const Text("Meat Tracker"), backgroundColor: Colors.red),
+          backgroundColor: Colors.pink[50],
           body: const MyHomePage(
             title: "Meat Tracker",
           ),
@@ -53,10 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            Container(
-              alignment: Alignment.center,
-              child: const Text('Login',
-                  style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Login',
+                    style:
+                        TextStyle(fontSize: 100, fontWeight: FontWeight.bold)),
+                Image.asset('images/meat.png', height: 100, width: 100)
+              ],
             ),
             Container(
               alignment: Alignment.center,
