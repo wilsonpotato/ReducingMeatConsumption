@@ -1,7 +1,7 @@
 {
   "file_generated_by": "FlutterFire CLI",
   "purpose": "FirebaseAppID & ProjectID for this Firebase app in this directory",
-  "GOOGLE_APP_ID": "1:690841431941:ios:49bf44a6517fd3509a9eec",
-  "FIREBASE_PROJECT_ID": "meat-tracker-ce8f3",
-  "GCM_SENDER_ID": "690841431941"
+  "GOOGLE_APP_ID": "1:1000083641743:ios:e95cc2ea44affbdf5ba7fa",
+  "FIREBASE_PROJECT_ID": "meat-tracker-790af",
+  "GCM_SENDER_ID": "1000083641743"
 }

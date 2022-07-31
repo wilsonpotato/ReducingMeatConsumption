@@ -96,6 +96,7 @@ class _LogMeatPage extends State<LogMeatPage> {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
               TextButton(
                 onPressed: () {
                   setState(() {

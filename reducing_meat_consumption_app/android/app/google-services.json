@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "690841431941",
-    "project_id": "meat-tracker-ce8f3",
-    "storage_bucket": "meat-tracker-ce8f3.appspot.com"
+    "project_number": "1000083641743",
+    "project_id": "meat-tracker-790af",
+    "storage_bucket": "meat-tracker-790af.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:690841431941:android:50a7a1cb9d12c12a9a9eec",
+        "mobilesdk_app_id": "1:1000083641743:android:c2eb7675919d9ce45ba7fa",
         "android_client_info": {
           "package_name": "com.example.reducing_meat_consumption_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "690841431941-4naqq1a11p9o3gde6h1po3i43lprkkh3.apps.googleusercontent.com",
+          "client_id": "1000083641743-60ch7cqitholv9j7bo2bd6qv08rrtsen.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARlhny_uMOmAhICWAbaaeks0OAdlf5giI"
+          "current_key": "AIzaSyDtuGHLBoezPdaocjgvOUfszImsOR0PxyA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "690841431941-4naqq1a11p9o3gde6h1po3i43lprkkh3.apps.googleusercontent.com",
+              "client_id": "1000083641743-60ch7cqitholv9j7bo2bd6qv08rrtsen.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "690841431941-mg2ru5tj40fpj1581t5b1arv5g9gp35b.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.reducingMeatConsumptionApp"
-              }
             }
           ]
         }

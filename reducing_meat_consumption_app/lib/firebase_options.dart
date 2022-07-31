@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDYK9eE4toNIiWq3Iz0UAWYjDhGTXBus88',
-    appId: '1:690841431941:web:d25622b161d2a52c9a9eec',
-    messagingSenderId: '690841431941',
-    projectId: 'meat-tracker-ce8f3',
-    authDomain: 'meat-tracker-ce8f3.firebaseapp.com',
-    storageBucket: 'meat-tracker-ce8f3.appspot.com',
+    apiKey: 'AIzaSyAMaTp6Y3faO-X3hiCxTB3yNi5flyh6cSY',
+    appId: '1:1000083641743:web:3d1906c64ee6b3515ba7fa',
+    messagingSenderId: '1000083641743',
+    projectId: 'meat-tracker-790af',
+    authDomain: 'meat-tracker-790af.firebaseapp.com',
+    storageBucket: 'meat-tracker-790af.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyARlhny_uMOmAhICWAbaaeks0OAdlf5giI',
-    appId: '1:690841431941:android:50a7a1cb9d12c12a9a9eec',
-    messagingSenderId: '690841431941',
-    projectId: 'meat-tracker-ce8f3',
-    storageBucket: 'meat-tracker-ce8f3.appspot.com',
+    apiKey: 'AIzaSyDtuGHLBoezPdaocjgvOUfszImsOR0PxyA',
+    appId: '1:1000083641743:android:c2eb7675919d9ce45ba7fa',
+    messagingSenderId: '1000083641743',
+    projectId: 'meat-tracker-790af',
+    storageBucket: 'meat-tracker-790af.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBfT6_FSUoifgTgrlDAicjHWVjQt1DN9TE',
-    appId: '1:690841431941:ios:49bf44a6517fd3509a9eec',
-    messagingSenderId: '690841431941',
-    projectId: 'meat-tracker-ce8f3',
-    storageBucket: 'meat-tracker-ce8f3.appspot.com',
-    iosClientId: '690841431941-mg2ru5tj40fpj1581t5b1arv5g9gp35b.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCEuCvSzeRaZNf78bFkOMStlPrOU7xBI-s',
+    appId: '1:1000083641743:ios:e95cc2ea44affbdf5ba7fa',
+    messagingSenderId: '1000083641743',
+    projectId: 'meat-tracker-790af',
+    storageBucket: 'meat-tracker-790af.appspot.com',
+    iosClientId: '1000083641743-4c8u1n46d0v210v42em6m912376a6mfv.apps.googleusercontent.com',
     iosBundleId: 'com.example.reducingMeatConsumptionApp',
   );
 }
