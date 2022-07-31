@@ -40,7 +40,10 @@ class _LogMeatPage extends State<LogMeatPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(meatLeft.toString(), style: TextStyle(fontSize: 120),),
+                    Text(
+                      meatLeft.toString(),
+                      style: TextStyle(fontSize: 120),
+                    ),
                     Image.asset('images/meat.png', height: 120, width: 120)
                   ],
                 ),
@@ -92,6 +95,22 @@ class _LogMeatPage extends State<LogMeatPage> {
                     ),
                   ],
                 ),
+              ),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    meatLeft = 300;
+                    FirebaseFirestore.instance
+                        .collection('users')
+                        .doc(widget.username + widget.password)
+                        .set({'meat': meatLeft.toString()});
+                  });
+                },
+                child: const Text(
+                  'Reset your meak intake!',
+                  style: TextStyle(fontSize: 45),
+                ),
+                style: TextButton.styleFrom(backgroundColor: Colors.red),
               ),
               TextButton(
                   onPressed: () {
