@@ -1,2 +1,2 @@
 # ReducingMeatConsumption
- A Way To Reduce Meat Consumption
+ A Way To Track Your Meat Consumption
