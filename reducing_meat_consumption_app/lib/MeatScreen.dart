@@ -1,11 +1,17 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:reducing_meat_consumption_app/main.dart';
 import 'constants.dart';
 
 class LogMeatPage extends StatefulWidget {
-  LogMeatPage(String username, String password) {
+  final String username;
+  final String password;
 
-  }
+  const LogMeatPage({Key? key, required this.username, required this.password})
+      : super(key: key);
 
   @override
   State<LogMeatPage> createState() => _LogMeatPage();
@@ -13,21 +19,24 @@ class LogMeatPage extends StatefulWidget {
 
 class _LogMeatPage extends State<LogMeatPage> {
   TextEditingController meatLogController = new TextEditingController();
-  int meatLeft = Constants.meatConsumption;
+  int meatLeft = 0;
+
   @override
   Widget build(BuildContext context) {
+    setMeats(); 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Log Your Meats!'),
         backgroundColor: Colors.red,
       ),
       body: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: ListView(
             children: [
               Container(
                 alignment: Alignment.center,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(meatLeft.toString()),
                     Image.asset('images/meat.png', height: 100, width: 100)
@@ -37,11 +46,12 @@ class _LogMeatPage extends State<LogMeatPage> {
               Container(
                 alignment: Alignment.center,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       alignment: Alignment.center,
                       height: 30,
-                      width: 100,
+                      width: 350,
                       child: TextField(
                         controller: meatLogController,
                         decoration: const InputDecoration(
@@ -63,17 +73,42 @@ class _LogMeatPage extends State<LogMeatPage> {
                                 builder: (BuildContext context) =>
                                     popupDialog(context));
                           }
+                          FirebaseFirestore.instance
+                              .collection('users')
+                              .doc(widget.username + widget.password)
+                              .set({'meat': meatLeft.toString()});
                         });
                       },
                       child: const Text('Log!'),
                       style: TextButton.styleFrom(backgroundColor: Colors.red),
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => const MyApp()));
+                },
+                child: const Text(
+                  "Sign out",
+                  style: TextStyle(fontSize: 20),
+                ))
             ],
           )),
     );
+  }
+
+  void setMeats() async {
+    var data;
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(widget.username + widget.password)
+        .get()
+        .then((docSnapshot) => {data = docSnapshot.data()});
+    setState(() {
+      meatLeft = int.parse(data['meat']);
+    });
   }
 
   Widget popupDialog(BuildContext context) {

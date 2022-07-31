@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "690841431941",
+    "project_id": "meat-tracker-ce8f3",
+    "storage_bucket": "meat-tracker-ce8f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690841431941:android:50a7a1cb9d12c12a9a9eec",
+        "android_client_info": {
+          "package_name": "com.example.reducing_meat_consumption_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690841431941-4naqq1a11p9o3gde6h1po3i43lprkkh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARlhny_uMOmAhICWAbaaeks0OAdlf5giI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690841431941-4naqq1a11p9o3gde6h1po3i43lprkkh3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "690841431941-mg2ru5tj40fpj1581t5b1arv5g9gp35b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.reducingMeatConsumptionApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
